@@ -16,17 +16,19 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 def download_audio(query_or_url: str):
-    """Завантажує найкраще доступне аудіо без потреби у FFmpeg"""
+    """Завантажує найкраще доступне аудіо з підтримкою посилань та пошуку без потреби у FFmpeg"""
     if not query_or_url.startswith("http"):
         search_target = f"ytsearch1:{query_or_url}"
     else:
         search_target = query_or_url
 
     ydl_opts = {
-        'format': 'bestaudio',
+        'format': 'bestaudio/best',
         'outtmpl': 'downloads/%(id)s.%(ext)s',
         'quiet': True,
         'noplaylist': True,
+        'geo_bypass': True,
+        'nocheckcertificate': True,
     }
 
     try:
