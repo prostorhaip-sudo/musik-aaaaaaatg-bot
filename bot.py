@@ -6,7 +6,7 @@ from aiogram.filters import Command
 from aiogram.types import Message, FSInputFile
 import yt_dlp
 
-TOKEN = "9092644188:AAFoQpvEawkuRw6RzGsZWz91IVspDSP9av8"
+TOKEN = "9092644188:AAFNzyheeXoptkfPHrYiV_nu4sm005InZiU"
 ADMIN_ID = 6887395659
 
 if not os.path.exists("downloads"):
